@@ -106,3 +106,42 @@ body {
   background: #fff;
   border-top: 1px solid #ddd;
 }
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #cc0000; /* strong red */
+  padding: 10px 20px;
+  border-bottom: 3px solid #990000; /* darker red accent */
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff; /* white text on red */
+}
+
+.search-bar {
+  flex: 1;
+  margin: 0 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.search-btn {
+  padding: 8px 12px;
+  background: #990000; /* darker red button */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 15px;
+  background: #cc0000; /* same red as header */
+  border-top: 3px solid #990000; /* darker red accent */
+  color: #fff; /* white text */
+}
