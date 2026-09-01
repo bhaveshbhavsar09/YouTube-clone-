@@ -1,50 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YouTube Clone</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="header">
-  <div class="logo">MyTube</div>
-  <input type="text" placeholder="Search" class="search-bar">
-  <button class="search-btn">🔍</button>
-  <button class="upload-btn">⬆ Upload</button>
-</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube Clone</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="left-controls">
+        <button class="icon-btn" aria-label="Menu">☰</button>
 
-
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <ul>
-      <li>🏠 Home</li>
-      <li>🔥 Trending</li>
-      <li>🎵 Music</li>
-      <li>🎮 Gaming</li>
-    </ul>
-  </aside>
-
-  <!-- Main Content -->
-  <main class="main-content">
-    <div class="video-grid">
-      <div class="video-card">
-        <img src="https://via.placeholder.com/300x180" alt="Video thumbnail">
-        <h3>Sample Video Title</h3>
-        <p>Channel Name • 1M views</p>
+        <div class="brand" aria-label="YouTube logo">
+          <div class="brand-mark">
+            <span>▶</span>
+          </div>
+          <span class="brand-text">YouTube</span>
+          <span class="country-code">C</span>
+        </div>
       </div>
-      <div class="video-card">
-        <img src="https://via.placeholder.com/300x180" alt="Video thumbnail">
-        <h3>Another Video</h3>
-        <p>Channel Name • 500K views</p>
+
+      <div class="search-area">
+        <div class="search-wrap">
+          <input type="text" placeholder="Search" aria-label="Search" />
+          <button class="search-btn" aria-label="Search button">⌕</button>
+        </div>
+        <button class="icon-btn mic-btn" aria-label="Voice search">🎤</button>
       </div>
-      <!-- Add more video cards -->
+
+      <div class="right-controls">
+        <button class="create-btn">＋ Create</button>
+        <button class="icon-btn" aria-label="Notifications">🔔</button>
+        <div class="profile-avatar">A</div>
+      </div>
+    </header>
+
+    <div class="content-wrap">
+      <aside class="sidebar">
+        <nav class="nav-section">
+          <a class="nav-item active" href="#"><span>🏠</span>Home</a>
+          <a class="nav-item" href="#"><span>🎬</span>Shorts</a>
+          <a class="nav-item" href="#"><span>📺</span>Subscriptions</a>
+        </nav>
+
+        <div class="divider"></div>
+
+        <nav class="nav-section">
+          <h4>You</h4>
+          <a class="nav-item" href="#"><span>🕘</span>History</a>
+          <a class="nav-item" href="#"><span>🎞️</span>Your videos</a>
+          <a class="nav-item" href="#"><span>⏱️</span>Watch later</a>
+          <a class="nav-item" href="#"><span>👍</span>Liked videos</a>
+        </nav>
+
+        <div class="divider"></div>
+
+        <nav class="nav-section">
+          <h4>Subscriptions</h4>
+          <a class="nav-item" href="#"><span class="dot red"></span>Tech World</a>
+          <a class="nav-item" href="#"><span class="dot blue"></span>Design Lab</a>
+          <a class="nav-item" href="#"><span class="dot green"></span>Travel Time</a>
+          <a class="nav-item" href="#"><span class="dot orange"></span>Game Zone</a>
+        </nav>
+      </aside>
+
+      <main class="main-panel">
+        <div class="chip-row">
+          <button class="chip active">All</button>
+          <button class="chip">Music</button>
+          <button class="chip">Gaming</button>
+          <button class="chip">Live</button>
+          <button class="chip">News</button>
+          <button class="chip">React</button>
+          <button class="chip">AI</button>
+          <button class="chip">Travel</button>
+          <button class="chip">Design</button>
+        </div>
+
+        <section class="video-grid">
+          <article class="video-card">
+            <div class="thumbnail thumb-one">
+              <span class="time-badge">14:22</span>
+            </div>
+            <div class="video-meta">
+              <div class="channel-avatar red">T</div>
+              <div class="video-info">
+                <h3>How to build a clean YouTube-style homepage in HTML & CSS</h3>
+                <p>Tech Studio</p>
+                <p>2.4M views • 2 months ago</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="thumbnail thumb-two">
+              <span class="time-badge">08:41</span>
+            </div>
+            <div class="video-meta">
+              <div class="channel-avatar blue">D</div>
+              <div class="video-info">
+                <h3>Designing modern interfaces that feel premium and minimal</h3>
+                <p>Design Lab</p>
+                <p>845K views • 1 week ago</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="thumbnail thumb-three">
+              <span class="time-badge">22:10</span>
+            </div>
+            <div class="video-meta">
+              <div class="channel-avatar green">V</div>
+              <div class="video-info">
+                <h3>Weekend trip ideas in Europe: hidden gems and beautiful coastlines</h3>
+                <p>Travel Time</p>
+                <p>1.2M views • 3 days ago</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="thumbnail thumb-four">
+              <span class="time-badge">19:05</span>
+            </div>
+            <div class="video-meta">
+              <div class="channel-avatar orange">G</div>
+              <div class="video-info">
+                <h3>Best gameplay moments from the latest action adventure release</h3>
+                <p>Game Zone</p>
+                <p>3.1M views • 5 days ago</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="thumbnail thumb-five">
+              <span class="time-badge">11:54</span>
+            </div>
+            <div class="video-meta">
+              <div class="channel-avatar pink">M</div>
+              <div class="video-info">
+                <h3>Music mix for deep focus: chill beats and soft synth textures</h3>
+                <p>Moon Beats</p>
+                <p>540K views • 1 month ago</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="thumbnail thumb-six">
+              <span class="time-badge">06:28</span>
+            </div>
+            <div class="video-meta">
+              <div class="channel-avatar purple">A</div>
+              <div class="video-info">
+                <h3>AI tools every creator should try this year</h3>
+                <p>Creator Guide</p>
+                <p>927K views • 6 days ago</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="thumbnail thumb-seven">
+              <span class="time-badge">25:00</span>
+            </div>
+            <div class="video-meta">
+              <div class="channel-avatar red">N</div>
+              <div class="video-info">
+                <h3>Daily news roundup: what happened in tech and startup world</h3>
+                <p>News Daily</p>
+                <p>1.8M views • 2 hours ago</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="thumbnail thumb-eight">
+              <span class="time-badge">12:18</span>
+            </div>
+            <div class="video-meta">
+              <div class="channel-avatar blue">C</div>
+              <div class="video-info">
+                <h3>Creative coding ideas using JavaScript and motion design</h3>
+                <p>Code Canvas</p>
+                <p>689K views • 9 months ago</p>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
     </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2026 MyTube Clone</p>
-  </footer>
-</body>
+  </body>
 </html>
