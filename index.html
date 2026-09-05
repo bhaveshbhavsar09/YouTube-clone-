@@ -29,7 +29,14 @@
       </div>
 
       <div class="right-controls">
-        <button class="create-btn">＋ Create</button>
+        <div class="create-menu-wrapper">
+          <button class="create-btn" aria-label="Create options" aria-expanded="false" aria-controls="create-menu">＋ Create</button>
+          <div class="create-menu" id="create-menu" hidden>
+            <button type="button">Upload video</button>
+            <button type="button">Go live</button>
+            <button type="button">Create post</button>
+          </div>
+        </div>
         <button class="icon-btn" aria-label="Notifications">🔔</button>
         <div class="profile-avatar">A</div>
       </div>
@@ -192,5 +199,46 @@
         </section>
       </main>
     </div>
+
+    <script>
+      const createButton = document.querySelector('.create-btn');
+      const createMenu = document.getElementById('create-menu');
+      const createWrapper = document.querySelector('.create-menu-wrapper');
+
+      if (createButton && createMenu) {
+        createButton.addEventListener('click', (event) => {
+          event.stopPropagation();
+          const isExpanded = createButton.getAttribute('aria-expanded') === 'true';
+          createButton.setAttribute('aria-expanded', String(!isExpanded));
+          createMenu.hidden = isExpanded;
+        });
+      }
+
+      document.addEventListener('click', (event) => {
+        if (!createWrapper?.contains(event.target)) {
+          if (createButton) {
+            createButton.setAttribute('aria-expanded', 'false');
+          }
+          if (createMenu) {
+            createMenu.hidden = true;
+          }
+        }
+      });
+
+      document.querySelectorAll('.nav-item').forEach((item) => {
+        item.addEventListener('click', (event) => {
+          event.preventDefault();
+          document.querySelectorAll('.nav-item').forEach((nav) => nav.classList.remove('active'));
+          item.classList.add('active');
+        });
+      });
+
+      document.querySelectorAll('.chip').forEach((chip) => {
+        chip.addEventListener('click', () => {
+          document.querySelectorAll('.chip').forEach((item) => item.classList.remove('active'));
+          chip.classList.add('active');
+        });
+      });
+    </script>
   </body>
 </html>
