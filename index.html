@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YouTube Clone</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <header class="topbar">
@@ -38,7 +39,7 @@
           </div>
         </div>
         <button class="icon-btn" aria-label="Notifications">🔔</button>
-        <div class="profile-avatar">A</div>
+        <button class="profile-avatar" type="button" aria-label="Open profile menu">A</button>
       </div>
     </header>
 
@@ -200,45 +201,5 @@
       </main>
     </div>
 
-    <script>
-      const createButton = document.querySelector('.create-btn');
-      const createMenu = document.getElementById('create-menu');
-      const createWrapper = document.querySelector('.create-menu-wrapper');
-
-      if (createButton && createMenu) {
-        createButton.addEventListener('click', (event) => {
-          event.stopPropagation();
-          const isExpanded = createButton.getAttribute('aria-expanded') === 'true';
-          createButton.setAttribute('aria-expanded', String(!isExpanded));
-          createMenu.hidden = isExpanded;
-        });
-      }
-
-      document.addEventListener('click', (event) => {
-        if (!createWrapper?.contains(event.target)) {
-          if (createButton) {
-            createButton.setAttribute('aria-expanded', 'false');
-          }
-          if (createMenu) {
-            createMenu.hidden = true;
-          }
-        }
-      });
-
-      document.querySelectorAll('.nav-item').forEach((item) => {
-        item.addEventListener('click', (event) => {
-          event.preventDefault();
-          document.querySelectorAll('.nav-item').forEach((nav) => nav.classList.remove('active'));
-          item.classList.add('active');
-        });
-      });
-
-      document.querySelectorAll('.chip').forEach((chip) => {
-        chip.addEventListener('click', () => {
-          document.querySelectorAll('.chip').forEach((item) => item.classList.remove('active'));
-          chip.classList.add('active');
-        });
-      });
-    </script>
   </body>
 </html>
